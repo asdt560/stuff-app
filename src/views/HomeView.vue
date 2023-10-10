@@ -1,13 +1,20 @@
 <script setup lang="ts">
-import { useCounterStore } from '../stores/counter'
+import ItemCard from '../components/ItemCard.vue'
+import { storeToRefs } from 'pinia'
+import { useItemsStore } from '../stores/items'
 
-const counter = useCounterStore()
+const itemsStore = useItemsStore()
+
+const { items } = storeToRefs(itemsStore)
+console.log(items.value)
 </script>
 
 <template>
   <main>
-    <p>{{counter.count}}</p>
-    <button @click="counter.increment">Increment</button>
-    <button @click="counter.decrement">Decrement</button>
+    <ItemCard v-for="(item, index) in items" :key="index">
+      <template #name>
+        {{ item.name }}
+      </template>
+    </ItemCard>
   </main>
 </template>
