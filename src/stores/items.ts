@@ -10,5 +10,9 @@ export const useItemsStore = defineStore('items', () => {
     console.log(items)
   }
 
-  return { items, addItem }
+  function getItem(index) {
+    return items.value[index]
+  }
+
+  return { items, addItem, getItem }
 })
