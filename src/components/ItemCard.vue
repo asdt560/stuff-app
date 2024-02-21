@@ -1,5 +1,7 @@
 <template>
   <div> 
-    <slot name="name"></slot>
+    <p class="underline">
+      <slot name="name"></slot>
+    </p>
   </div>
 </template>

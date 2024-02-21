@@ -1,6 +1,6 @@
-<script setup>
+<script setup lang="ts">
   import { ref } from 'vue'
-  import { useItemsStore } from '../stores/items.ts'
+  import { useItemsStore } from '../stores/items'
 
   const newItem = ref('')
 

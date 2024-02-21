@@ -10,7 +10,7 @@
 
   const route = useRoute()
 
-  const item = items.value[route.params.id]
+  const item = items.value[Number(route.params.id)]
   
 </script>
 
