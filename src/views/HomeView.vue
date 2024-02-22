@@ -18,6 +18,9 @@ console.log(items.value)
         <template #name>
           {{ item.name }}
         </template>
+        <template #description>
+          {{ item.description }}
+        </template>
       </ItemCard>
     </RouterLink>
   </main>

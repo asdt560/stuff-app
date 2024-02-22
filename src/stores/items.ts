@@ -1,18 +1,19 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useItemsStore = defineStore('items', () => {
-  const items = ref([{name: 'item1'}])
+interface Item {
+  name: string
+  description: string
+}
 
-  function addItem (item) {
+export const useItemsStore = defineStore('items', () => {
+  const items = ref([{name: 'item1', description: 'lorem ipsum'}])
+
+  function addItem (item : Item) {
     console.log(item)
     items.value.push(item)
     console.log(items)
   }
 
-  function getItem(index) {
-    return items.value[index]
-  }
-
-  return { items, addItem, getItem }
+  return { items, addItem }
 })

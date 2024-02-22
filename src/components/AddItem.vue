@@ -2,23 +2,26 @@
   import { ref } from 'vue'
   import { useItemsStore } from '../stores/items'
 
-  const newItem = ref('')
+  const initialState = () => ({
+    name: '',
+    description: ''
+  })
+
+  const newItem = ref(initialState())
 
   const itemsStore = useItemsStore()
 
   const handleSubmit = () => {
-    console.log(newItem.value)
-    if(newItem.value.length > 0) {
-      console.log('adding item')
-      itemsStore.addItem({name: newItem.value})
-    }
-    newItem.value = ''
+    console.log(newItem.value, 'item in addItem on submit')
+    itemsStore.addItem(newItem.value)
+    Object.assign(newItem, initialState())
   }
 </script>
 
 <template>
   <form @submit.prevent="handleSubmit">
-    <input type="text" v-model="newItem" placeholder="Item Name">
+    <input type="text" v-model="newItem.name" placeholder="Item Name" required>
+    <textarea v-model="newItem.description" placeholder="Item Description" required></textarea>
     <button type="submit">Add</button>
   </form>
 </template>
