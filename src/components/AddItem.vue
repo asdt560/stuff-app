@@ -19,7 +19,7 @@
 </script>
 
 <template>
-  <form @submit.prevent="handleSubmit">
+  <form class="flex" @submit.prevent="handleSubmit">
     <input type="text" v-model="newItem.name" placeholder="Item Name" required>
     <textarea v-model="newItem.description" placeholder="Item Description" required></textarea>
     <button type="submit">Add</button>
