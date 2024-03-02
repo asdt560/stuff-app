@@ -23,6 +23,9 @@
       <template #description>
         {{ item?.description }}
       </template>
+      <template #date>
+        {{ item?.date }}
+      </template>
     </ItemCard>
   </main>
 </template>

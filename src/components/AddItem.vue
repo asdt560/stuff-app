@@ -2,7 +2,13 @@
   import { ref } from 'vue'
   import { useItemsStore } from '../stores/items'
 
-  const initialState = () => ({
+  interface Item {
+    name: string
+    description: string
+    date?: Date
+  }
+
+  const initialState = () : Item => ({
     name: '',
     description: ''
   })
@@ -12,6 +18,7 @@
   const itemsStore = useItemsStore()
 
   const handleSubmit = () => {
+    newItem.value.date = new Date()
     console.log(newItem.value, 'item in addItem on submit')
     itemsStore.addItem(newItem.value)
     Object.assign(newItem, initialState())
