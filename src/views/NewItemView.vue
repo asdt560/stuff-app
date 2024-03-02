@@ -4,7 +4,7 @@
 
 <template>
   <div class="new-item">
-    <h1>New Item</h1>
+    <h1 class="text-green-500 font-bold text-xl">New Item</h1>
     <AddItem />
   </div>
 </template>
