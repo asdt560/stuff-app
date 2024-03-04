@@ -24,7 +24,11 @@
         {{ item?.description }}
       </template>
       <template #date>
-        {{ item?.date }}
+        {{ 
+          item?.createdAt.getDate() + '/' + 
+          (item?.createdAt.getMonth() + 1) + '/' + 
+          item?.createdAt.getFullYear()
+        }}
       </template>
     </ItemCard>
   </main>

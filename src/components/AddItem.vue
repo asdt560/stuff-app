@@ -5,7 +5,7 @@
   interface Item {
     name: string
     description: string
-    date?: Date
+    createdAt?: Date
   }
 
   const initialState = () : Item => ({
@@ -18,7 +18,7 @@
   const itemsStore = useItemsStore()
 
   const handleSubmit = () => {
-    newItem.value.date = new Date()
+    newItem.value.createdAt = new Date()
     console.log(newItem.value, 'item in addItem on submit')
     itemsStore.addItem(newItem.value)
     Object.assign(newItem, initialState())

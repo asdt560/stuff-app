@@ -21,9 +21,6 @@ console.log(items.value)
         <template #description>
           {{ item.description }}
         </template>
-        <template #date>
-          {{ item.date }}
-        </template>
       </ItemCard>
     </RouterLink>
   </main>

@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 interface Item {
   name: string
   description: string
-  date?: Date
+  createdAt?: Date
 }
 
 export const useItemsStore = defineStore('items', () => {
