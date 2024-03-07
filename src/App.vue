@@ -4,11 +4,17 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <div class="flex h-6 align-center">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink class="text-3xl font-bold underline" to="/new-item">New Item</RouterLink>
+    <div class="flex items-center">
+      <nav class="flex items-center">
+        <RouterLink 
+          class="text-2xl p-2 font-bold text-green-700 hover:bg-green-700 hover:text-white" 
+          to="/">Home</RouterLink>
+        <RouterLink 
+          class="text-2xl p-2 font-bold text-green-700 hover:bg-green-700 hover:text-white" 
+          to="/about">About</RouterLink>
+        <RouterLink 
+          class="text-2xl p-2 font-bold text-green-700 hover:bg-green-700 hover:text-white" 
+          to="/new-item">New Item</RouterLink>
       </nav>
     </div>
   </header>
