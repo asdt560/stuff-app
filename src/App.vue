@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <div class="wrapper">
+    <div class="flex h-6 align-center">
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -16,29 +16,3 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView class="p-2" />
 </template>
 
-<style scoped>
-header {
-  height: 2rem;
-  display: flex;
-  align-items: center;
-}
-
-nav {
-    display: flex;
-    gap: 1rem;
-}
-
-a {
-  all: unset;
-  font-size: 1.25rem;
-  color: green;
-  cursor: pointer;
-  padding: 0.5rem
-}
-
-a:hover {
-  color: #fff;
-  background: green;
-}
-
-</style>
