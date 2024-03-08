@@ -23,7 +23,7 @@
       <template #description>
         {{ item?.description }}
       </template>
-      <template #date>
+      <template v-if="item.createdAt" #date>
         {{ 
           item?.createdAt.getDate() + '/' + 
           (item?.createdAt.getMonth() + 1) + '/' + 

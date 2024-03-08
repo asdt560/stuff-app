@@ -9,17 +9,21 @@ const itemsStore = useItemsStore()
 const { items } = storeToRefs(itemsStore)
 
 console.log(items.value)
+
+const truncatedDescription = (description: string) => {
+  return description.length > 20 ? description.slice(0, 20) + '...' : description
+}
 </script>
 
 <template>
-  <main>
+  <main class="flex gap-2">
     <RouterLink v-for="(item, index) in items" :key="index" :to="{ name: 'item', params: { id: index.toString() } }">
       <ItemCard >
         <template #name>
           {{ item.name }}
         </template>
         <template #description>
-          {{ item.description }}
+            {{ truncatedDescription(item.description) }}
         </template>
       </ItemCard>
     </RouterLink>
