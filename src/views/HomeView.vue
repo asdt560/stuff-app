@@ -3,6 +3,7 @@ import ItemCard from '../components/ItemCard.vue'
 import { RouterLink } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { useItemsStore } from '../stores/items'
+import { onMounted } from 'vue'
 
 const itemsStore = useItemsStore()
 

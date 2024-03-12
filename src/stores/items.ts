@@ -8,7 +8,11 @@ interface Item {
 }
 
 export const useItemsStore = defineStore('items', () => {
-  const items = ref([{name: 'item1', description: 'lorem ipsum'}])
+  let items = ref([{name: 'item1', description: 'lorem ipsum'}])
+
+  const fetchItems = () => {
+    let items = fetch()
+  }
 
   function addItem (item : Item) {
     console.log(item)
