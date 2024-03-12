@@ -1,6 +1,8 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
+import axios from 'axios'
+
 interface Item {
   name: string
   description: string
@@ -8,10 +10,11 @@ interface Item {
 }
 
 export const useItemsStore = defineStore('items', () => {
-  let items = ref([{name: 'item1', description: 'lorem ipsum'}])
+  const items = ref([{name: 'item1', description: 'lorem ipsum'}])
 
   const fetchItems = () => {
-    let items = fetch()
+    const data = await axios()
+    items.value = data.data
   }
 
   function addItem (item : Item) {
